@@ -1,0 +1,172 @@
+[
+  {
+    "name": "image",
+    "desc": ["图片。"],
+    "attrs": [
+      {
+        "name": "src",
+        "type": { "name": "String" },
+        "defaultValue": "",
+        "desc": ["图片资源地址"],
+        "since": "",
+        "enum": []
+      },
+      {
+        "name": "mode",
+        "type": { "name": "String" },
+        "defaultValue": "'scaleToFill'",
+        "desc": ["图片裁剪、缩放的模式"],
+        "since": "<div style=\"width:68px;\"></div>",
+        "enum": [
+          {
+            "value": "scaleToFill",
+            "desc": "不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素"
+          },
+          {
+            "value": "aspectFit",
+            "desc": "保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。"
+          },
+          {
+            "value": "aspectFill",
+            "desc": "保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。"
+          },
+          {
+            "value": "widthFix",
+            "desc": "宽度不变，高度自动变化，保持原图宽高比不变"
+          },
+          {
+            "value": "heightFix",
+            "desc": "高度不变，宽度自动变化，保持原图宽高比不变 **App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3**"
+          },
+          { "value": "top", "desc": "不缩放图片，只显示图片的顶部区域" },
+          { "value": "bottom", "desc": "不缩放图片，只显示图片的底部区域" },
+          { "value": "center", "desc": "不缩放图片，只显示图片的中间区域" },
+          { "value": "left", "desc": "不缩放图片，只显示图片的左边区域" },
+          { "value": "right", "desc": "不缩放图片，只显示图片的右边区域" },
+          { "value": "top left", "desc": "不缩放图片，只显示图片的左上边区域" },
+          {
+            "value": "top right",
+            "desc": "不缩放图片，只显示图片的右上边区域"
+          },
+          {
+            "value": "bottom left",
+            "desc": "不缩放图片，只显示图片的左下边区域"
+          },
+          {
+            "value": "bottom right",
+            "desc": "不缩放图片，只显示图片的右下边区域"
+          }
+        ]
+      },
+      {
+        "name": "lazy-load",
+        "type": { "name": "Boolean" },
+        "defaultValue": "false",
+        "desc": ["图片懒加载。只针对page与scroll-view下的image有效"],
+        "since": "微信小程序、百度小程序、字节跳动小程序",
+        "enum": [
+          {
+            "value": "true",
+            "desc": ["图片懒加载。只针对page与scroll-view下的image有效"]
+          },
+          {
+            "value": "false",
+            "desc": ["图片懒加载。只针对page与scroll-view下的image有效"]
+          }
+        ]
+      },
+      {
+        "name": "fade-show",
+        "type": { "name": "Boolean" },
+        "defaultValue": "true",
+        "desc": ["图片显示动画效果"],
+        "since": "仅App-nvue 2.3.4+ Android有效",
+        "enum": [
+          { "value": "true", "desc": ["图片显示动画效果"] },
+          { "value": "false", "desc": ["图片显示动画效果"] }
+        ]
+      },
+      {
+        "name": "webp",
+        "type": { "name": "boolean" },
+        "defaultValue": "false",
+        "desc": ["默认不解析 webP 格式，只支持网络资源"],
+        "since": "微信小程序2.9.0",
+        "enum": [
+          { "value": "true", "desc": ["默认不解析 webP 格式，只支持网络资源"] },
+          { "value": "false", "desc": ["默认不解析 webP 格式，只支持网络资源"] }
+        ]
+      },
+      {
+        "name": "show-menu-by-longpress",
+        "type": { "name": "boolean" },
+        "defaultValue": "false",
+        "desc": ["开启长按图片显示识别小程序码菜单"],
+        "since": "微信小程序2.7.0",
+        "enum": [
+          { "value": "true", "desc": ["开启长按图片显示识别小程序码菜单"] },
+          { "value": "false", "desc": ["开启长按图片显示识别小程序码菜单"] }
+        ]
+      },
+      {
+        "name": "draggable",
+        "type": { "name": "boolean" },
+        "defaultValue": "true",
+        "desc": ["鼠标长按是否能拖动图片"],
+        "since": "仅 H5 平台 3.1.1+ 有效",
+        "enum": [
+          { "value": "true", "desc": ["鼠标长按能拖动图片"] },
+          { "value": "false", "desc": ["鼠标长按不能拖动图片"] }
+        ]
+      },
+      {
+        "name": "binderror",
+        "type": { "name": "HandleEvent" },
+        "defaultValue": "",
+        "desc": [
+          "当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}"
+        ],
+        "since": "",
+        "enum": []
+      },
+      {
+        "name": "error",
+        "type": { "name": "HandleEvent" },
+        "defaultValue": "",
+        "desc": [
+          "当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}"
+        ],
+        "since": "",
+        "enum": []
+      },
+      {
+        "name": "bindload",
+        "type": { "name": "HandleEvent" },
+        "defaultValue": "",
+        "desc": [
+          "当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}"
+        ],
+        "since": "&nbsp;",
+        "enum": []
+      },
+      {
+        "name": "load",
+        "type": { "name": "HandleEvent" },
+        "defaultValue": "",
+        "desc": [
+          "当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}"
+        ],
+        "since": "&nbsp;",
+        "enum": []
+      }
+    ],
+    "tips": [
+      "`<image>` 组件默认宽度 300px、高度 225px；`app-nvue平台，暂时默认为屏幕宽度`",
+      "`src` 仅支持相对路径、绝对路径，支持 base64 码；",
+      "页面结构复杂，css样式太多的情况，使用 image 可能导致样式生效较慢，出现 “闪一下” 的情况，此时设置 `image{will-change: transform}` ,可优化此问题。",
+      "自定义组件里面使用 `<image>`时，若 `src` 使用相对路径可能出现路径查找失败的情况，故建议使用绝对路径。",
+      "webp格式的图片在Android上是内置支持的。iOS上不同平台不一样，具体如下：app-vue下，iOS不支持；app-nvue下，iOS支持；微信小程序2.9.0起，iOS支持。",
+      "svg 格式的图片在不同的平台支持情况不同。具体为：app-nvue 不支持 svg 格式的图片，小程序上只支持网络地址。"
+    ]
+  }
+]
